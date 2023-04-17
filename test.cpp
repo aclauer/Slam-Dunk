@@ -1,8 +1,7 @@
-#include <stdlib.h>
 #include <iostream>
-#define GL_SILENCE_DEPRECATION
-#include <GLFW/glfw3.h>
-#include <GLUT/glut.h>
+//#define GL_SILENCE_DEPRECATION
+//#include <GLFW/glfw3.h>
+//#include <GLUT/glut.h>
 //#include <OpenGL/gl3.h>
 using namespace std;
 
@@ -11,7 +10,7 @@ const int SCREEN_HEIGHT = 400;
 
 int main() {
     cout << "Starting...\n";
-
+/*
     int major, minor, revision;
     glfwGetVersion(&major, &minor, &revision);
 
@@ -46,5 +45,6 @@ int main() {
 
     cout << "Time to be done!\n";
     glfwTerminate();
+    */
     return 0;
 }
