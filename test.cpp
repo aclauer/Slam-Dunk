@@ -21,20 +21,13 @@ int main() {
         return -1;
     }
 
-    if (!glewInit()) {
-        cout << "Error initializing glew.";
-        return -1;
-    }
+    
 
     int major, minor, revision;
     glfwGetVersion(&major, &minor, &revision);
 
     // Output GLFW version number
     //std::cout << "GLFW version: " << major << "." << minor << "." << revision << std::endl;
-
-    cout << "Current version of GL\n";
-    const GLubyte* version = glGetString(GL_VERSION);
-    cout << version << "\n";
 
     cout << "Down here now \n";
 
@@ -44,30 +37,54 @@ int main() {
         0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f
     };
 
+    cout << "Past vertices definition\n";
+
     GLFWwindow* window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Test window", NULL, NULL);
+    
+    if (!glewInit()) {
+        cout << "Error initializing glew.\n";
+        return -1;
+    }
+    
     glfwMakeContextCurrent(window);
     if (!window) {
         cout << "Error creating the window.\n";
         glfwTerminate();
         return -1;
     }
+    
+
+    cout << "Created window\n";
 
     glfwMakeContextCurrent(window);
+    cout << "Set contex\n";
     
     glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    cout << "Set viewport\n";
 
+    // TODO: Issue here, causing segmentation fault.
+    // Solve with error checking?
+    // https://gamedev.stackexchange.com/questions/22785/glcreateshader-causes-segmentation-fault
+    //GLuint vertexShader = glCreateShader(0);
+    
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+
+    cout << "Initialized vertex shader\n";
 
     // Controls color of test window
     glClearColor(0.50f, 0.13f, 0.17f, 1.0f);
+    cout << "clear color\n";
     glClear(GL_COLOR_BUFFER_BIT);
+    cout << "clear\n";
     glfwSwapBuffers(window);
+    cout << "swapped buffers\n";
 
     while (!glfwWindowShouldClose(window)) {
         // Do stuff.
 
         glfwPollEvents();
     }
+    cout << "window should close\n";
 
     cout << "Time to be done!\n";
     glfwTerminate();
