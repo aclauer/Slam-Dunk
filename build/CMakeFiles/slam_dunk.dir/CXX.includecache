@@ -9,4 +9,8 @@
 /home/andrewlauer/Documents/projects/Slam-Dunk/test.cpp
 iostream
 -
+GLFW/glfw3.h
+-
+GL/gl.h
+-
 
