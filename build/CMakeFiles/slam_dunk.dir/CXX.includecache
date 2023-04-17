@@ -9,6 +9,10 @@
 /home/andrewlauer/Documents/projects/Slam-Dunk/test.cpp
 iostream
 -
+math.h
+-
+GL/glew.h
+-
 GLFW/glfw3.h
 -
 GL/gl.h
