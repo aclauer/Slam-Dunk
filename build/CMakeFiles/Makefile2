@@ -74,12 +74,12 @@ clean: CMakeFiles/slam_dunk.dir/clean
 CMakeFiles/slam_dunk.dir/all:
 	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/depend
 	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles --progress-num=1,2 "Built target slam_dunk"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target slam_dunk"
 .PHONY : CMakeFiles/slam_dunk.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/slam_dunk.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/slam_dunk.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles 0
 .PHONY : CMakeFiles/slam_dunk.dir/rule

@@ -1,1 +1,1 @@
-/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/slam_dunk.dir/test.cpp.o  -o slam_dunk  /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 -lGLEW -lGL 
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/slam_dunk.dir/test.cpp.o CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.o CMakeFiles/slam_dunk.dir/resources/EBO.cpp.o CMakeFiles/slam_dunk.dir/resources/VAO.cpp.o CMakeFiles/slam_dunk.dir/resources/VBO.cpp.o  -o slam_dunk  /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 -lGLEW -lGL 

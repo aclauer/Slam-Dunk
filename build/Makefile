@@ -123,6 +123,114 @@ slam_dunk/fast:
 	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/build
 .PHONY : slam_dunk/fast
 
+resources/EBO.o: resources/EBO.cpp.o
+
+.PHONY : resources/EBO.o
+
+# target to build an object file
+resources/EBO.cpp.o:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/EBO.cpp.o
+.PHONY : resources/EBO.cpp.o
+
+resources/EBO.i: resources/EBO.cpp.i
+
+.PHONY : resources/EBO.i
+
+# target to preprocess a source file
+resources/EBO.cpp.i:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/EBO.cpp.i
+.PHONY : resources/EBO.cpp.i
+
+resources/EBO.s: resources/EBO.cpp.s
+
+.PHONY : resources/EBO.s
+
+# target to generate assembly for a file
+resources/EBO.cpp.s:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/EBO.cpp.s
+.PHONY : resources/EBO.cpp.s
+
+resources/VAO.o: resources/VAO.cpp.o
+
+.PHONY : resources/VAO.o
+
+# target to build an object file
+resources/VAO.cpp.o:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/VAO.cpp.o
+.PHONY : resources/VAO.cpp.o
+
+resources/VAO.i: resources/VAO.cpp.i
+
+.PHONY : resources/VAO.i
+
+# target to preprocess a source file
+resources/VAO.cpp.i:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/VAO.cpp.i
+.PHONY : resources/VAO.cpp.i
+
+resources/VAO.s: resources/VAO.cpp.s
+
+.PHONY : resources/VAO.s
+
+# target to generate assembly for a file
+resources/VAO.cpp.s:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/VAO.cpp.s
+.PHONY : resources/VAO.cpp.s
+
+resources/VBO.o: resources/VBO.cpp.o
+
+.PHONY : resources/VBO.o
+
+# target to build an object file
+resources/VBO.cpp.o:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/VBO.cpp.o
+.PHONY : resources/VBO.cpp.o
+
+resources/VBO.i: resources/VBO.cpp.i
+
+.PHONY : resources/VBO.i
+
+# target to preprocess a source file
+resources/VBO.cpp.i:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/VBO.cpp.i
+.PHONY : resources/VBO.cpp.i
+
+resources/VBO.s: resources/VBO.cpp.s
+
+.PHONY : resources/VBO.s
+
+# target to generate assembly for a file
+resources/VBO.cpp.s:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/VBO.cpp.s
+.PHONY : resources/VBO.cpp.s
+
+resources/shaderClass.o: resources/shaderClass.cpp.o
+
+.PHONY : resources/shaderClass.o
+
+# target to build an object file
+resources/shaderClass.cpp.o:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.o
+.PHONY : resources/shaderClass.cpp.o
+
+resources/shaderClass.i: resources/shaderClass.cpp.i
+
+.PHONY : resources/shaderClass.i
+
+# target to preprocess a source file
+resources/shaderClass.cpp.i:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.i
+.PHONY : resources/shaderClass.cpp.i
+
+resources/shaderClass.s: resources/shaderClass.cpp.s
+
+.PHONY : resources/shaderClass.s
+
+# target to generate assembly for a file
+resources/shaderClass.cpp.s:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.s
+.PHONY : resources/shaderClass.cpp.s
+
 test.o: test.cpp.o
 
 .PHONY : test.o
@@ -159,6 +267,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... slam_dunk"
+	@echo "... resources/EBO.o"
+	@echo "... resources/EBO.i"
+	@echo "... resources/EBO.s"
+	@echo "... resources/VAO.o"
+	@echo "... resources/VAO.i"
+	@echo "... resources/VAO.s"
+	@echo "... resources/VBO.o"
+	@echo "... resources/VBO.i"
+	@echo "... resources/VBO.s"
+	@echo "... resources/shaderClass.o"
+	@echo "... resources/shaderClass.i"
+	@echo "... resources/shaderClass.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

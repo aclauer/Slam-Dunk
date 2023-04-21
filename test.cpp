@@ -57,18 +57,25 @@ int main() {
 
     glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     
+    printf("Shader\n");
+
     Shader shaderProgram("shaders/default.vert", "shaders/default.frag");
     
+    printf("VAO1\n");
     VAO VAO1;
     VAO1.Bind();
 
+    printf("VBO1\n");
     VBO VBO1(vertices, sizeof(vertices));
+    printf("EBO1\n");
     EBO EBO1(indices, sizeof(indices));
 
+    printf("Here\n");
     VAO1.LinkVBO(VBO1, 0);
     VAO1.Unbind();
     VBO1.Unbind();
     EBO1.Unbind();
+    printf("No Here\n");
 
     // Color in the test window.
     glClearColor(0.0f, 0.13f, 0.17f, 1.0f);
