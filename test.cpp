@@ -5,17 +5,15 @@
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
 
+#include"resources/shaderClass.h"
+#include"resources/VBO.h"
+#include"resources/VAO.h"
+#include"resources/EBO.h"
+
 using namespace std;
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 400;
-
-const char* vertexShaderSource = "#version 330 core\n"
-"layout (location = 0) in vec3 aPos;\n"
-"void main()\n"
-"{\n"
-"   gl_Position = vec4(aPos.x, aPos.y, aPos.Z, 1.0);\n"
-"}\0";
 
 int main() {
     cout << "Starting...\n";
@@ -26,13 +24,19 @@ int main() {
         return -1;
     }
 
-    //int major, minor, revision;
-    //glfwGetVersion(&major, &minor, &revision);
-
     GLfloat vertices[] = {
         -0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
         0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
-        0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f
+        0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f,
+        -0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f,
+        0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f,
+        0.0f, -0.5f * float(sqrt(3)) / 3, 0.0f,
+    };
+
+    GLuint indices[] = {
+        0, 3, 5,
+        3, 2, 4,
+        5, 4, 1
     };
 
     // Create and check window
@@ -51,56 +55,49 @@ int main() {
         return -1;
     }
 
-    //const GLubyte* version = glGetString(GL_VERSION);
-    //printf("OpenGL Version: %s\n", version);
-
     glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     
-    GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-    glCompileShader(vertexShader);
+    Shader shaderProgram("shaders/default.vert", "shaders/default.frag");
+    
+    VAO VAO1;
+    VAO1.Bind();
 
-    GLuint shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram, vertexShader);
-    glLinkProgram(shaderProgram);
+    VBO VBO1(vertices, sizeof(vertices));
+    EBO EBO1(indices, sizeof(indices));
 
-    glDeleteShader(vertexShader);
-
-    GLuint VAO, VBO;
-
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-
-    glBindVertexArray(VAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
-
-
+    VAO1.LinkVBO(VBO1, 0);
+    VAO1.Unbind();
+    VBO1.Unbind();
+    EBO1.Unbind();
 
     // Color in the test window.
     glClearColor(0.0f, 0.13f, 0.17f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     glfwSwapBuffers(window);
 
+    // main loop
     while (!glfwWindowShouldClose(window)) {
-        // Do stuff.
+        //printf("In main loop\n");
         glClearColor(0.50f, 0.13f, 0.17f, 1.0f);
+        //printf("1\n");
         glClear(GL_COLOR_BUFFER_BIT);
-        glUseProgram(shaderProgram);
-        glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        //printf("2\n");
+        shaderProgram.Activate();
+        //printf("3\n");
+        VAO1.Bind();
+        //printf("4\n");
+        glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
+        //printf("5\n");
 
         glfwSwapBuffers(window);
+        //printf("6\n");
         glfwPollEvents();
     }
-    cout << "window should close\n";
+    
+    VAO1.Delete();
+    VBO1.Delete();
+    EBO1.Delete();
+    shaderProgram.Delete();
 
     cout << "Time to be done!\n";
     glfwTerminate();

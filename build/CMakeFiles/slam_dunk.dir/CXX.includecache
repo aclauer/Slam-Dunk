@@ -6,6 +6,36 @@
 
 #IncludeRegexTransform: 
 
+/home/andrewlauer/Documents/projects/Slam-Dunk/resources/EBO.h
+GL/glew.h
+-
+
+/home/andrewlauer/Documents/projects/Slam-Dunk/resources/VAO.h
+GL/glew.h
+-
+VBO.h
+/home/andrewlauer/Documents/projects/Slam-Dunk/resources/VBO.h
+
+/home/andrewlauer/Documents/projects/Slam-Dunk/resources/VBO.h
+GL/glew.h
+-
+
+/home/andrewlauer/Documents/projects/Slam-Dunk/resources/shaderClass.h
+GL/glew.h
+-
+string
+-
+fstream
+-
+fstream
+-
+sstream
+-
+iostream
+-
+cerrno
+-
+
 /home/andrewlauer/Documents/projects/Slam-Dunk/test.cpp
 iostream
 -
@@ -17,4 +47,12 @@ GLFW/glfw3.h
 -
 GL/gl.h
 -
+resources/shaderClass.h
+/home/andrewlauer/Documents/projects/Slam-Dunk/resources/shaderClass.h
+resources/VBO.h
+/home/andrewlauer/Documents/projects/Slam-Dunk/resources/VBO.h
+resources/VAO.h
+/home/andrewlauer/Documents/projects/Slam-Dunk/resources/VAO.h
+resources/EBO.h
+/home/andrewlauer/Documents/projects/Slam-Dunk/resources/EBO.h
 
