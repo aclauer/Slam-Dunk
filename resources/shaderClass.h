@@ -3,11 +3,13 @@
 
 #include<GL/glew.h>
 #include<string>
-#include<fstream>
+#include<cstring>
 #include<fstream>
 #include<sstream>
 #include<iostream>
 #include<cerrno>
+#include<unistd.h>
+#include<fcntl.h>
 
 std::string get_file_contents(const char* filename);
 

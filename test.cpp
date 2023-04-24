@@ -59,7 +59,7 @@ int main() {
     
     printf("Shader\n");
 
-    Shader shaderProgram("shaders/default.vert", "shaders/default.frag");
+    Shader shaderProgram("/home/andrewlauer/Documents/projects/Slam-Dunk/default.vert", "/home/andrewlauer/Documents/projects/Slam-Dunk/default.frag");
     
     printf("VAO1\n");
     VAO VAO1;
@@ -75,29 +75,31 @@ int main() {
     VAO1.Unbind();
     VBO1.Unbind();
     EBO1.Unbind();
-    printf("No Here\n");
 
-    // Color in the test window.
+    printf("Starting this stuff.\n");
     glClearColor(0.0f, 0.13f, 0.17f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     glfwSwapBuffers(window);
+    printf("Starting the main loop.\n");
+
+    //shaderProgram.Activate();
 
     // main loop
     while (!glfwWindowShouldClose(window)) {
-        //printf("In main loop\n");
-        glClearColor(0.50f, 0.13f, 0.17f, 1.0f);
-        //printf("1\n");
+        printf("In main loop\n");
+        glClearColor(0.0f, 0.13f, 0.17f, 1.0f);
+        printf("1\n");
         glClear(GL_COLOR_BUFFER_BIT);
-        //printf("2\n");
+        printf("2\n");
         shaderProgram.Activate();
-        //printf("3\n");
+        printf("3\n");
         VAO1.Bind();
-        //printf("4\n");
+        printf("4\n");
         glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
-        //printf("5\n");
+        printf("5\n");
 
         glfwSwapBuffers(window);
-        //printf("6\n");
+        printf("6\n");
         glfwPollEvents();
     }
     
