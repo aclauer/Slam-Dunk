@@ -62,11 +62,37 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr pcapToPointCloud(const std::string& pcapPath
 }
 */
 
+pcl::PointCloud<pcl::PointXYZ>::Ptr loadPCD(const char* path) {
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
+
+    if (pcl::io::loadPCDFile<pcl::PointXYZ>(path, *cloud) == -1) {
+        // Error handling if the file doesn't exist or is not in the correct format
+        PCL_ERROR("Could not read PCD file.\n");
+        return NULL;
+    }
+
+    std::cout << "Loaded " << cloud->size() << " data points from cloud.pcd with the following fields: " << std::endl;
+
+    return cloud;
+}
+
+void addOrigin(pcl::visualization::PCLVisualizer::Ptr viewer) {
+    pcl::PointXYZ center = pcl::PointXYZ(0, 0, 0);
+    pcl::PointXYZ x = pcl::PointXYZ(1, 0, 0);
+    pcl::PointXYZ y = pcl::PointXYZ(0, 1, 0);
+    pcl::PointXYZ z = pcl::PointXYZ(0, 0, 1);
+    viewer->addSphere(center, 0.01, 255, 0, 0);
+    viewer->addArrow(x, center, 255, 0, 0, false, "x");
+    viewer->addArrow(y, center, 0, 255, 0, false, "y");
+    viewer->addArrow(z, center, 0, 0, 255, false, "z");
+}
+
 int main() {
+    /*
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
 
     
-    if (pcl::io::loadPCDFile<pcl::PointXYZ>("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/cloud_0000000000.pcd", *cloud) == -1) {
+    if (pcl::io::loadPCDFile<pcl::PointXYZ>("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/cloud_0000000001.pcd", *cloud) == -1) {
         // Error handling if the file doesn't exist or is not in the correct format
         PCL_ERROR("Could not read PCD file.\n");
         return -1;
@@ -76,10 +102,12 @@ int main() {
     //for (size_t i = 0; i < cloud->fields.size (); ++i) {
     //    std::cout << " " << cloud->fields[i].name;
     //}
-    
+    */
+
     printf("1\n");
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loadPCD("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/cloud_0000000001.pcd");
     pcl::visualization::PCLVisualizer::Ptr viewer(new pcl::visualization::PCLVisualizer("Cloud Viewer"));
-    //pcl::visualization::CloudViewer viewer("Simple Cloud Viewer");
+    //pcl::visualization::CloudViewer viewer("Simple Cloud Viewer");https://sourceforge.net/projects/pointclouds/files/
     printf("2\n");
 
     viewer->setBackgroundColor(0, 0, 0);
@@ -88,6 +116,10 @@ int main() {
     printf("4\n");
     viewer->addPointCloud(cloud, color_handler, "cloud");
     printf("5\n");
+
+    //pcl::PointXYZ center = pcl::PointXYZ(0, 0, 0);
+    //viewer->addSphere(center, 0.01, 255, 0, 0);
+    addOrigin(viewer);
 
     //viewer.showCloud(cloud);
 
