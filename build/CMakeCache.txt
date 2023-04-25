@@ -320,6 +320,9 @@ OPENNI_INCLUDE_DIR:PATH=/usr/include/ni
 //Path to a library.
 OPENNI_LIBRARY:FILEPATH=/usr/lib/libOpenNI.so
 
+//The directory containing a CMake configuration file for PCL-Apps.
+PCL-Apps_DIR:PATH=PCL-Apps_DIR-NOTFOUND
+
 //path to common headers
 PCL_COMMON_INCLUDE_DIR:PATH=/usr/include/pcl-1.10
 

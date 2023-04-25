@@ -15,6 +15,10 @@ pcl/point_types.h
 -
 pcl/visualization/cloud_viewer.h
 -
+pcap.h
+-
+pcl/point_cloud.h
+-
 
 /usr/include/eigen3/Eigen/Cholesky
 Core
