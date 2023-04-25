@@ -14,6 +14,8 @@ cmake --build build
 ```
 sudo apt-get install libglfw3
 sudo apt-get install libglfw3-dev
+sudo apt-get install libpcl-dev
+sudo apt-get install libpcap-dev
 
 ```
 

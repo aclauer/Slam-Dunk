@@ -57,91 +57,102 @@ include CMakeFiles/slam_dunk.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/slam_dunk.dir/flags.make
 
-CMakeFiles/slam_dunk.dir/test.cpp.o: CMakeFiles/slam_dunk.dir/flags.make
-CMakeFiles/slam_dunk.dir/test.cpp.o: ../test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/slam_dunk.dir/test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/slam_dunk.dir/test.cpp.o -c /home/andrewlauer/Documents/projects/Slam-Dunk/test.cpp
+CMakeFiles/slam_dunk.dir/main.cpp.o: CMakeFiles/slam_dunk.dir/flags.make
+CMakeFiles/slam_dunk.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/slam_dunk.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/slam_dunk.dir/main.cpp.o -c /home/andrewlauer/Documents/projects/Slam-Dunk/main.cpp
 
-CMakeFiles/slam_dunk.dir/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/slam_dunk.dir/test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andrewlauer/Documents/projects/Slam-Dunk/test.cpp > CMakeFiles/slam_dunk.dir/test.cpp.i
+CMakeFiles/slam_dunk.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/slam_dunk.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andrewlauer/Documents/projects/Slam-Dunk/main.cpp > CMakeFiles/slam_dunk.dir/main.cpp.i
 
-CMakeFiles/slam_dunk.dir/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/slam_dunk.dir/test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andrewlauer/Documents/projects/Slam-Dunk/test.cpp -o CMakeFiles/slam_dunk.dir/test.cpp.s
-
-CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.o: CMakeFiles/slam_dunk.dir/flags.make
-CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.o: ../resources/shaderClass.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.o -c /home/andrewlauer/Documents/projects/Slam-Dunk/resources/shaderClass.cpp
-
-CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andrewlauer/Documents/projects/Slam-Dunk/resources/shaderClass.cpp > CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.i
-
-CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andrewlauer/Documents/projects/Slam-Dunk/resources/shaderClass.cpp -o CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.s
-
-CMakeFiles/slam_dunk.dir/resources/EBO.cpp.o: CMakeFiles/slam_dunk.dir/flags.make
-CMakeFiles/slam_dunk.dir/resources/EBO.cpp.o: ../resources/EBO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/slam_dunk.dir/resources/EBO.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/slam_dunk.dir/resources/EBO.cpp.o -c /home/andrewlauer/Documents/projects/Slam-Dunk/resources/EBO.cpp
-
-CMakeFiles/slam_dunk.dir/resources/EBO.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/slam_dunk.dir/resources/EBO.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andrewlauer/Documents/projects/Slam-Dunk/resources/EBO.cpp > CMakeFiles/slam_dunk.dir/resources/EBO.cpp.i
-
-CMakeFiles/slam_dunk.dir/resources/EBO.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/slam_dunk.dir/resources/EBO.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andrewlauer/Documents/projects/Slam-Dunk/resources/EBO.cpp -o CMakeFiles/slam_dunk.dir/resources/EBO.cpp.s
-
-CMakeFiles/slam_dunk.dir/resources/VAO.cpp.o: CMakeFiles/slam_dunk.dir/flags.make
-CMakeFiles/slam_dunk.dir/resources/VAO.cpp.o: ../resources/VAO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/slam_dunk.dir/resources/VAO.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/slam_dunk.dir/resources/VAO.cpp.o -c /home/andrewlauer/Documents/projects/Slam-Dunk/resources/VAO.cpp
-
-CMakeFiles/slam_dunk.dir/resources/VAO.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/slam_dunk.dir/resources/VAO.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andrewlauer/Documents/projects/Slam-Dunk/resources/VAO.cpp > CMakeFiles/slam_dunk.dir/resources/VAO.cpp.i
-
-CMakeFiles/slam_dunk.dir/resources/VAO.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/slam_dunk.dir/resources/VAO.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andrewlauer/Documents/projects/Slam-Dunk/resources/VAO.cpp -o CMakeFiles/slam_dunk.dir/resources/VAO.cpp.s
-
-CMakeFiles/slam_dunk.dir/resources/VBO.cpp.o: CMakeFiles/slam_dunk.dir/flags.make
-CMakeFiles/slam_dunk.dir/resources/VBO.cpp.o: ../resources/VBO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/slam_dunk.dir/resources/VBO.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/slam_dunk.dir/resources/VBO.cpp.o -c /home/andrewlauer/Documents/projects/Slam-Dunk/resources/VBO.cpp
-
-CMakeFiles/slam_dunk.dir/resources/VBO.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/slam_dunk.dir/resources/VBO.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andrewlauer/Documents/projects/Slam-Dunk/resources/VBO.cpp > CMakeFiles/slam_dunk.dir/resources/VBO.cpp.i
-
-CMakeFiles/slam_dunk.dir/resources/VBO.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/slam_dunk.dir/resources/VBO.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andrewlauer/Documents/projects/Slam-Dunk/resources/VBO.cpp -o CMakeFiles/slam_dunk.dir/resources/VBO.cpp.s
+CMakeFiles/slam_dunk.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/slam_dunk.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andrewlauer/Documents/projects/Slam-Dunk/main.cpp -o CMakeFiles/slam_dunk.dir/main.cpp.s
 
 # Object files for target slam_dunk
 slam_dunk_OBJECTS = \
-"CMakeFiles/slam_dunk.dir/test.cpp.o" \
-"CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.o" \
-"CMakeFiles/slam_dunk.dir/resources/EBO.cpp.o" \
-"CMakeFiles/slam_dunk.dir/resources/VAO.cpp.o" \
-"CMakeFiles/slam_dunk.dir/resources/VBO.cpp.o"
+"CMakeFiles/slam_dunk.dir/main.cpp.o"
 
 # External object files for target slam_dunk
 slam_dunk_EXTERNAL_OBJECTS =
 
-slam_dunk: CMakeFiles/slam_dunk.dir/test.cpp.o
-slam_dunk: CMakeFiles/slam_dunk.dir/resources/shaderClass.cpp.o
-slam_dunk: CMakeFiles/slam_dunk.dir/resources/EBO.cpp.o
-slam_dunk: CMakeFiles/slam_dunk.dir/resources/VAO.cpp.o
-slam_dunk: CMakeFiles/slam_dunk.dir/resources/VBO.cpp.o
+slam_dunk: CMakeFiles/slam_dunk.dir/main.cpp.o
 slam_dunk: CMakeFiles/slam_dunk.dir/build.make
-slam_dunk: /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
+slam_dunk: /usr/lib/x86_64-linux-gnu/libpcl_io.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libboost_system.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+slam_dunk: /usr/lib/libOpenNI.so
+slam_dunk: /usr/lib/libOpenNI2.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkChartsCore-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkInfovisCore-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libfreetype.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libz.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libjpeg.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libpng.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libtiff.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libexpat.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkIOGeometry-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkIOLegacy-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkIOPLY-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkRenderingLOD-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkViewsContext2D-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkViewsCore-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkRenderingContextOpenGL2-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkRenderingOpenGL2-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libpcl_octree.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libpcl_common.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkInteractionWidgets-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkFiltersModeling-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkInteractionStyle-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkFiltersExtraction-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkFiltersStatistics-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkImagingFourier-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkalglib-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkFiltersHybrid-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkImagingGeneral-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkImagingSources-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkImagingHybrid-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkRenderingAnnotation-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkImagingColor-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkRenderingVolume-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkIOXML-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkIOXMLParser-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkIOCore-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkRenderingContext2D-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkRenderingFreeType-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libfreetype.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkImagingCore-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkRenderingCore-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkCommonColor-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkFiltersGeometry-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkFiltersSources-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkFiltersGeneral-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkCommonComputationalGeometry-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkFiltersCore-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkIOImage-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkCommonExecutionModel-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkCommonDataModel-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkCommonTransforms-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkCommonMisc-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkCommonMath-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkCommonSystem-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkCommonCore-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtksys-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkDICOMParser-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libvtkmetaio-7.1.so.7.1p.1
+slam_dunk: /usr/lib/x86_64-linux-gnu/libz.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libGLEW.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libSM.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libICE.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libX11.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libXext.so
+slam_dunk: /usr/lib/x86_64-linux-gnu/libXt.so
 slam_dunk: CMakeFiles/slam_dunk.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable slam_dunk"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andrewlauer/Documents/projects/Slam-Dunk/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable slam_dunk"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/slam_dunk.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
