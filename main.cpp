@@ -54,11 +54,13 @@ int main() {
     preprocessor.testFunction();
 
     // Print out some sample point coordinates
-    /*
-    for (int nIndex = 0; nIndex < 10; nIndex++) {
+    for (int nIndex = 0; nIndex < 1; nIndex++) {
         printf("x: %f\n", cloud->points[nIndex].x);
+        printf("y: %f\n", cloud->points[nIndex].y);
+        printf("z: %f\n", cloud->points[nIndex].z);
+        printf("Range: %f\n", preprocessor.getSquareDistance(cloud->points[nIndex]));
     }
-    */
+    
 
 
     // Display point cloud

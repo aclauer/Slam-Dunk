@@ -10,6 +10,7 @@ class Preprocessor {
         Preprocessor();
 
         void testFunction();
+        double getSquareDistance(pcl::PointXYZ point);
         double** getVertexMap(pcl::PointCloud<pcl::PointXYZ> cloud);
 };
 
