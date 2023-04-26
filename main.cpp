@@ -4,6 +4,7 @@
 #include <pcl/visualization/cloud_viewer.h>
 #include <pcap.h>
 #include <pcl/point_cloud.h>
+#include "Preprocessor.h"
 
 pcl::PointCloud<pcl::PointXYZ>::Ptr loadPCD(const char* path) {
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
@@ -49,6 +50,9 @@ int main() {
     printf("Height: %d\n", cloud->height);
     printf("Width: %d\n", cloud->width);
 
+    Preprocessor preprocessor;
+    preprocessor.testFunction();
+
     // Print out some sample point coordinates
     /*
     for (int nIndex = 0; nIndex < 10; nIndex++) {
@@ -56,8 +60,10 @@ int main() {
     }
     */
 
-    // Display point cloud
-    while (!viewer->wasStopped()) viewer->spinOnce();
 
+    // Display point cloud
+    //while (!viewer->wasStopped()) viewer->spinOnce();
+
+    printf("Successfully finished!\n");
     return 0;
 }

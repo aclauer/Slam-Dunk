@@ -123,6 +123,33 @@ slam_dunk/fast:
 	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/build
 .PHONY : slam_dunk/fast
 
+Preprocessor.o: Preprocessor.cpp.o
+
+.PHONY : Preprocessor.o
+
+# target to build an object file
+Preprocessor.cpp.o:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/Preprocessor.cpp.o
+.PHONY : Preprocessor.cpp.o
+
+Preprocessor.i: Preprocessor.cpp.i
+
+.PHONY : Preprocessor.i
+
+# target to preprocess a source file
+Preprocessor.cpp.i:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/Preprocessor.cpp.i
+.PHONY : Preprocessor.cpp.i
+
+Preprocessor.s: Preprocessor.cpp.s
+
+.PHONY : Preprocessor.s
+
+# target to generate assembly for a file
+Preprocessor.cpp.s:
+	$(MAKE) -f CMakeFiles/slam_dunk.dir/build.make CMakeFiles/slam_dunk.dir/Preprocessor.cpp.s
+.PHONY : Preprocessor.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... slam_dunk"
+	@echo "... Preprocessor.o"
+	@echo "... Preprocessor.i"
+	@echo "... Preprocessor.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

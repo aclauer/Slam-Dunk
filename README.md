@@ -9,6 +9,10 @@ cmake --build build
 ./build/slam_dunk
 ```
 
+# Point Clouds
+We need the point clouds to be in .pcd format before we can load them into a `pcl::PointCloud<PointXYZ>` object. However, point clouds given by KITTI are .bin files.
+To do this, run `converter.py` with the appropriate path to the .bin file. This will output a .pcd file with the corresponding data, that can then be fed into the project.
+
 # Dependencies I downloaded
 
 ```

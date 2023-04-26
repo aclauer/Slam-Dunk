@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/slam_dunk.dir/Preprocessor.cpp.o"
   "CMakeFiles/slam_dunk.dir/main.cpp.o"
   "slam_dunk"
   "slam_dunk.pdb"
