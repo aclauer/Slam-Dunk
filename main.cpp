@@ -62,6 +62,7 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr pcapToPointCloud(const std::string& pcapPath
 }
 */
 
+
 pcl::PointCloud<pcl::PointXYZ>::Ptr loadPCD(const char* path) {
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
 
@@ -71,16 +72,17 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr loadPCD(const char* path) {
         return NULL;
     }
 
-    std::cout << "Loaded " << cloud->size() << " data points from cloud.pcd with the following fields: " << std::endl;
+    std::cout << "Loaded " << cloud->size() << " data points." << std::endl;
 
     return cloud;
 }
 
-void addOrigin(pcl::visualization::PCLVisualizer::Ptr viewer) {
+
+void addOrigin(pcl::visualization::PCLVisualizer::Ptr viewer, double scale) {
     pcl::PointXYZ center = pcl::PointXYZ(0, 0, 0);
-    pcl::PointXYZ x = pcl::PointXYZ(1, 0, 0);
-    pcl::PointXYZ y = pcl::PointXYZ(0, 1, 0);
-    pcl::PointXYZ z = pcl::PointXYZ(0, 0, 1);
+    pcl::PointXYZ x = pcl::PointXYZ(scale, 0, 0);
+    pcl::PointXYZ y = pcl::PointXYZ(0, scale, 0);
+    pcl::PointXYZ z = pcl::PointXYZ(0, 0, scale);
     viewer->addSphere(center, 0.01, 255, 0, 0);
     viewer->addArrow(x, center, 255, 0, 0, false, "x");
     viewer->addArrow(y, center, 0, 255, 0, false, "y");
@@ -105,21 +107,24 @@ int main() {
     */
 
     printf("1\n");
-    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loadPCD("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/cloud_0000000001.pcd");
+    //pcl::PointCloud<pcl::PointXYZ>::Ptr cloud;
+    //pcl::io::loadPCDFile("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/000000.bin", cloud);
+    printf("Loaded?\n");
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loadPCD("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/0000000_converted.pcd");
     pcl::visualization::PCLVisualizer::Ptr viewer(new pcl::visualization::PCLVisualizer("Cloud Viewer"));
     //pcl::visualization::CloudViewer viewer("Simple Cloud Viewer");https://sourceforge.net/projects/pointclouds/files/
     printf("2\n");
 
     viewer->setBackgroundColor(0, 0, 0);
     printf("3\n");
-    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> color_handler(cloud, 255, 255, 255);
+    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> color_handler(cloud, 212, 201, 87);
     printf("4\n");
     viewer->addPointCloud(cloud, color_handler, "cloud");
     printf("5\n");
 
     //pcl::PointXYZ center = pcl::PointXYZ(0, 0, 0);
     //viewer->addSphere(center, 0.01, 255, 0, 0);
-    addOrigin(viewer);
+    addOrigin(viewer, 5);
 
     //viewer.showCloud(cloud);
 
