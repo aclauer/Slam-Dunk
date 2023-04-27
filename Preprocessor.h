@@ -11,7 +11,8 @@ class Preprocessor {
 
         void testFunction();
         double getSquareDistance(pcl::PointXYZ point);
-        double** getVertexMap(pcl::PointCloud<pcl::PointXYZ> cloud);
+        //double (*getVertexMap(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud))[900];
+        std::vector< std::vector<float> > getVertexMap(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
 };
 
 #endif

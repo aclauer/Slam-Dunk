@@ -73,16 +73,32 @@ int main() {
 
     int rows = 100;
     int cols = 100;
-    cv::Mat arr(rows, cols, CV_8UC1);
-    cv::randu(arr, cv::Scalar(0), cv::Scalar(255));  // fill the array with random values between 0 and 255
+    //cv::Mat arr(rows, cols, CV_8UC1);
+    //cv::randu(arr, cv::Scalar(0), cv::Scalar(255));  // fill the array with random values between 0 and 255
 
     // display the array as an image
-    cv::namedWindow("Array Image", cv::WINDOW_NORMAL);
-    cv::imshow("Array Image", arr);
+    //cv::namedWindow("Array Image", cv::WINDOW_NORMAL);
+    //cv::imshow("Array Image", arr);
     cv::waitKey(0);  // wait for a key press
 
     // Display point cloud
     //while (!viewer->wasStopped()) viewer->spinOnce();
+
+    //printf("Type: %s\n", typeid(preprocessor.getVertexMap(cloud)));
+    
+    //double vertexMap[64][900];
+
+    //double(*vertexMap)[900] = preprocessor.getVertexMap(cloud);
+
+    std::vector<std::vector<float> > vertexMap = preprocessor.getVertexMap(cloud);
+    /*
+    if (vertexMap == NULL) {
+        printf("Null\n");
+    } else {
+        printf("Not null!\n");
+    }*/
+    printf("About to print\n");
+    printf("%f\n", vertexMap[0][0]);
 
     printf("Successfully finished!\n");
     return 0;
