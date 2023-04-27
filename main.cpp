@@ -4,6 +4,9 @@
 #include <pcl/visualization/cloud_viewer.h>
 #include <pcap.h>
 #include <pcl/point_cloud.h>
+#include <opencv4/opencv2/core.hpp>
+#include <opencv4/opencv2/highgui.hpp>
+
 #include "Preprocessor.h"
 
 pcl::PointCloud<pcl::PointXYZ>::Ptr loadPCD(const char* path) {
@@ -62,6 +65,21 @@ int main() {
     }
     
 
+    //double arr[4][2] = {{1/10, 2/10}, {3/10, 4/10}, {5/10, 6/10}, {7/10, 8/10}};
+
+    //cv::Mat image(3, 4, CV_16U, arr);
+    //cv::imshow("Test", image);
+    //cv::waitKey(0);
+
+    int rows = 100;
+    int cols = 100;
+    cv::Mat arr(rows, cols, CV_8UC1);
+    cv::randu(arr, cv::Scalar(0), cv::Scalar(255));  // fill the array with random values between 0 and 255
+
+    // display the array as an image
+    cv::namedWindow("Array Image", cv::WINDOW_NORMAL);
+    cv::imshow("Array Image", arr);
+    cv::waitKey(0);  // wait for a key press
 
     // Display point cloud
     //while (!viewer->wasStopped()) viewer->spinOnce();
