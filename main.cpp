@@ -57,13 +57,19 @@ int main() {
     preprocessor.testFunction();
 
     // Print out some sample point coordinates
-    for (int nIndex = 0; nIndex < 1; nIndex++) {
-        printf("x: %f\n", cloud->points[nIndex].x);
-        printf("y: %f\n", cloud->points[nIndex].y);
-        printf("z: %f\n", cloud->points[nIndex].z);
-        printf("Range: %f\n", preprocessor.getSquareDistance(cloud->points[nIndex]));
+    for (int nIndex = 0; nIndex < cloud->points.size(); nIndex++) {
+        //double x = cloud->points[nIndex].x;
+        //double y = cloud->points[nIndex].y;
+        double z = cloud->points[nIndex].z;
+        //printf("x: %f\n", cloud->points[nIndex].x);
+        //printf("y: %f\n", cloud->points[nIndex].y);
+        //printf("z: %f\n", cloud->points[nIndex].z);
+        //printf("Range: %f\n", preprocessor.getSquareDistance(cloud->points[nIndex]));
     }
-    
+    pcl::PointXYZ p = cloud->points[9294];
+    double x = p.x;
+    double y = p.y;
+    double z = p.z;
 
     //double arr[4][2] = {{1/10, 2/10}, {3/10, 4/10}, {5/10, 6/10}, {7/10, 8/10}};
 
@@ -97,8 +103,23 @@ int main() {
     } else {
         printf("Not null!\n");
     }*/
-    printf("About to print\n");
-    printf("%f\n", vertexMap[0][0]);
+    //printf("About to print\n");
+    //printf("%f\n", vertexMap[0][0]);
+    printf("(%f, %f, %f)\n", x, y, z);
+
+    double z_1 = z / abs(x);
+    //printf("z_1: %f\n", z_1);
+    double z_2 = z_1 + (24.8 / 26.8);
+    double z_3 = z_2 * 64;
+    printf("z_1: %f, z_2: %f, z_3: %f\n", z_1, z_2, z_3);
+
+    //double r = preprocessor.getSquareDistance(p);
+    //double s = asin(z * 1/r);
+
+    //double v = (1 - (asin(z * (1/r)) + 2)/26.8)*64;
+    //printf("r: %f, s: %f, v: %f\n", r, s, v);
+
+    
 
     printf("Successfully finished!\n");
     return 0;

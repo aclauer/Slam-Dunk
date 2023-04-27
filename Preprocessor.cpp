@@ -32,7 +32,6 @@ std::vector< std::vector<float> > Preprocessor::getVertexMap(pcl::PointCloud<pcl
     std::vector< std::vector<float> > vertexMap(64, std::vector<float>(900));
 
     printf("Size: %d by %d\n", vertexMap.size(), vertexMap.at(0).size());
-    vertexMap[0][0] = 69.0;
     printf("Returning getVertexMap\n");
 
     return vertexMap;
