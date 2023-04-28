@@ -140,6 +140,13 @@ int main() {
     printf("Min z_1: %f\n", min);
     printf("Max z_1: %f\n", max);
 
+    // tan(24.8 deg)
+    double min_v = (min + 0.462064869823) * 128.7763;
+    double max_v = (max + 0.462064869823) * 128.7763;
+
+    printf("Min_v: %f\n", min_v);
+    printf("Max_v: %f\n", max_v);
+
     printf("Successfully finished!\n");
     return 0;
 }
