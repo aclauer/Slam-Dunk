@@ -36,7 +36,7 @@ void addAxes(pcl::visualization::PCLVisualizer::Ptr viewer, double scale) {
 
 int main() {
     // Load in the specified point cloud after it has been converted to pcd
-    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loadPCD("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/0000000_converted.pcd");
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loadPCD("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/0000000019_converted.pcd");
     
     Preprocessor preprocessor;
 
