@@ -41,17 +41,6 @@ int main() {
     
     Preprocessor preprocessor;
 
-    // Print out some sample point coordinates
-    for (int nIndex = 0; nIndex < cloud->points.size(); nIndex++) {
-        //double x = cloud->points[nIndex].x;
-        //double y = cloud->points[nIndex].y;
-        //double z = cloud->points[nIndex].z;
-        //printf("x: %f\n", cloud->points[nIndex].x);
-        //printf("y: %f\n", cloud->points[nIndex].y);
-        //printf("z: %f\n", cloud->points[nIndex].z);
-        //printf("Range: %f\n", preprocessor.getSquareDistance(cloud->points[nIndex]));
-    }
-
     std::clock_t startV = std::clock();
     std::vector<std::vector<float> > vertexMap = preprocessor.getVertexMap(cloud);
     std::clock_t endV = std::clock();
@@ -86,15 +75,6 @@ int main() {
     double nmap_runtime = double(endN - startN) / CLOCKS_PER_SEC;
     printf("Normal Map runtime: %f\n", nmap_runtime);
 
-    /*
-    cv::Mat normImg(normalMap.size(), normalMap.at(0).size(), CV_8UC1);
-    for (int i = 0; i < normImg.rows; i++) {
-        for (int j = 0; j < normImg.cols; j++) {
-            normImg.at<uchar>(i, j) = (normalMap.at(i).at(j));
-        }
-    }
-    */
-
     cv::Mat normImg(normalMap.size(), normalMap.at(0).size(), CV_8UC3);
     for (int i = 0; i < normImg.rows; i++) {
         for (int j = 0; j < normImg.cols; j++) {
@@ -111,7 +91,6 @@ int main() {
 
     cv::imshow("Normal Map", normImg);
     cv::waitKey(0);
-    
     
     // Create visualizer
     pcl::visualization::PCLVisualizer::Ptr viewer(new pcl::visualization::PCLVisualizer("Visualization"));
