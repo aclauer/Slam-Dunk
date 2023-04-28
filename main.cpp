@@ -66,7 +66,7 @@ int main() {
         //printf("z: %f\n", cloud->points[nIndex].z);
         //printf("Range: %f\n", preprocessor.getSquareDistance(cloud->points[nIndex]));
     }
-    pcl::PointXYZ p = cloud->points[115322];
+    pcl::PointXYZ p = cloud->points[3684];
     double x = p.x;
     double y = p.y;
     double z = p.z;
@@ -148,5 +148,12 @@ int main() {
     printf("Max_v: %f\n", max_v);
 
     printf("Successfully finished!\n");
+
+    // Algo for u coordinate
+    double t = atan2(y, x);
+    double u_1 = 1 - (t / 3.1415926);
+    double u = u_1 * 900 / 2;
+    printf("t: %f, u_1: %f, u: %f\n", t, u_1, u);
+
     return 0;
 }
