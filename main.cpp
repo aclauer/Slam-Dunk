@@ -54,25 +54,37 @@ int main() {
     std::vector<std::vector<float> > vertexMap = preprocessor.getVertexMap(cloud);
 
     // Convert vertex map into Mat object
-    cv::Mat img(vertexMap.size(), vertexMap.at(0).size(), CV_8UC1);
-    for (int i = 0; i < img.rows; i++){
-        for (int j = 0; j < img.cols; j++) {
-            img.at<uchar>(i, j) = (vertexMap.at(i).at(j) * 30);
+    cv::Mat vertImg(vertexMap.size(), vertexMap.at(0).size(), CV_8UC1);
+    for (int i = 0; i < vertImg.rows; i++){
+        for (int j = 0; j < vertImg.cols; j++) {
+            vertImg.at<uchar>(i, j) = (vertexMap.at(i).at(j) * 30);
         }
     }
 
-    cv::imshow("Vertex Map", img);
+    cv::imshow("Vertex Map", vertImg);
     cv::waitKey(0);  // wait for a key press
+
+    std::vector<std::vector<float> > normalMap = preprocessor.getNormalMap(vertexMap);
+
+    cv::Mat normImg(normalMap.size(), normalMap.at(0).size(), CV_8UC1);
+    for (int i = 0; i < normImg.rows; i++) {
+        for (int j = 0; j < normImg.cols; j++) {
+            normImg.at<uchar>(i, j) = (normalMap.at(i).at(j));
+        }
+    }
+
+    cv::imshow("Normal Map", normImg);
+    cv::waitKey(0);
+    
     
     // Create visualizer
     pcl::visualization::PCLVisualizer::Ptr viewer(new pcl::visualization::PCLVisualizer("Visualization"));
-
-    // Set background color to be black
-    viewer->setBackgroundColor(0, 0, 0);
-
     // Set point cloud color
-    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> color_handler(cloud, 212, 201, 87);
+    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> color_handler(cloud, 0, 0, 0);
     viewer->addPointCloud(cloud, color_handler, "cloud");
+    // Set background color to be white
+    viewer->setBackgroundColor(255, 255, 255);
+    viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 0.125, "cloud");
 
     // Add x, y, z arrows to point cloud
     addAxes(viewer, 3);

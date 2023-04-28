@@ -42,3 +42,22 @@ std::vector< std::vector<float> > Preprocessor::getVertexMap(pcl::PointCloud<pcl
     }
     return vertexMap;
 }
+
+std::vector< std::vector<float> > Preprocessor::getNormalMap(std::vector< std::vector<float> > vertexMap) {
+    std::vector< std::vector<float> > normalMap(64, std::vector<float>(900));
+    
+    for (int v = 0; v < 63; v++) {
+        for (int u = 0; u < 899; u++) {
+            Eigen::Vector3d a(vertexMap[v][u+1] - vertexMap[v][u], 0, 1);
+            Eigen::Vector3d b(0, vertexMap[v+1][u] - vertexMap[v][u], 1);
+
+            Eigen::Vector3d normal = (a.cross(b)).normalized();
+            //std::cout << "Unit vector: " << normal << std::endl;
+            Eigen::Vector3d c(u, v, 1);
+            normalMap[v][u] = c.dot(normal);
+            //printf("Normal: %f\n", normalMap[v][u]);
+        }
+    }
+
+    return normalMap;
+}
