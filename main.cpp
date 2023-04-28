@@ -61,7 +61,7 @@ int main() {
         }
     }
 
-    cv::imshow("Vertex Map", vertImg);
+    cv::imwrite("Vertex Map", vertImg);
     cv::waitKey(0);  // wait for a key press
 
     std::vector<std::vector<float> > normalMap = preprocessor.getNormalMap(vertexMap);
@@ -73,7 +73,7 @@ int main() {
         }
     }
 
-    cv::imshow("Normal Map", normImg);
+    cv::imwrite("Normal Map", normImg);
     cv::waitKey(0);
     
     
