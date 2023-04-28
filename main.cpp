@@ -38,20 +38,7 @@ int main() {
     // Load in the specified point cloud after it has been converted to pcd
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loadPCD("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/0000000_converted.pcd");
     
-    // Create visualizer
-    pcl::visualization::PCLVisualizer::Ptr viewer(new pcl::visualization::PCLVisualizer("Visualization"));
-
-    // Set background color to be black
-    viewer->setBackgroundColor(0, 0, 0);
-
-    // Set point cloud color
-    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> color_handler(cloud, 212, 201, 87);
-    viewer->addPointCloud(cloud, color_handler, "cloud");
-
-    // Add x, y, z arrows to point cloud
-    addAxes(viewer, 3);
-    printf("Height: %d\n", cloud->height);
-    printf("Width: %d\n", cloud->width);
+    
 
     Preprocessor preprocessor;
     preprocessor.testFunction();
@@ -85,18 +72,19 @@ int main() {
     // display the array as an image
     //cv::namedWindow("Array Image", cv::WINDOW_NORMAL);
     //cv::imshow("Array Image", arr);
-    cv::waitKey(0);  // wait for a key press
+    //cv::waitKey(0);  // wait for a key press
 
-    // Display point cloud
-    //while (!viewer->wasStopped()) viewer->spinOnce();
+    
 
     //printf("Type: %s\n", typeid(preprocessor.getVertexMap(cloud)));
     
     //double vertexMap[64][900];
 
     //double(*vertexMap)[900] = preprocessor.getVertexMap(cloud);
-
+    //printf("a\n");
     std::vector<std::vector<float> > vertexMap = preprocessor.getVertexMap(cloud);
+    printf("value from vertex map: %f\n", vertexMap[0][0]);
+    //printf("b\n");
     /*
     if (vertexMap == NULL) {
         printf("Null\n");
@@ -105,7 +93,7 @@ int main() {
     }*/
     //printf("About to print\n");
     //printf("%f\n", vertexMap[0][0]);
-    printf("(%f, %f, %f)\n", x, y, z);
+    //printf("(%f, %f, %f)\n", x, y, z);
 
     //double z_1 = z / abs(x);double r = preprocessor.getSquareDistance(p);
     //double s = asin(z * 1/r);
@@ -114,19 +102,20 @@ int main() {
     //double z_3 = z_2 * 64;
     //printf("z_1: %f, z_2: %f, z_3: %f\n", z_1, z_2, z_3);
 
-    double r = preprocessor.getDistance(p);
+    //double r = preprocessor.getDistance(p);
     //double s = asin(z * 1/r);
 
     //double v = (1 - (asin(z * (1/r)) + 2)/26.8)*64;
     //printf("r: %f, s: %f, v: %f\n", r, s, v);
 
-    double theta = asin(z / r);
-    double z_1 = tan(theta);
+    //double theta = asin(z / r);
+    //double z_1 = tan(theta);
 
-    printf("r: %f, Theta: %f, z_1: %f\n", r, theta, z_1);
+    //printf("r: %f, Theta: %f, z_1: %f\n", r, theta, z_1);
 
-    double min = 0;
-    double max = 0;
+    //double min = 0;
+    //double max = 0;
+    /*
     for (int i = 0; i < cloud->points.size(); i++) {
         double z = cloud->points[i].z;
         double r = preprocessor.getDistance(cloud->points[i]);
@@ -154,6 +143,72 @@ int main() {
     double u_1 = 1 - (t / 3.1415926);
     double u = u_1 * 900 / 2;
     printf("t: %f, u_1: %f, u: %f\n", t, u_1, u);
+    */
+    //printf("1\n");
+    //cv::Mat img(64, 900, CV_8UC1);
+    //cv::Mat img(cv::Size(900, 64), CV_8U, vertexMap);
+    
+    //printf("%d, %d\n", vertexMap.size(), vertexMap.at(0).size());
+    
+    for (int i = 0; i < 100; i++) {
+        printf("Intensity: %f\n", vertexMap[0][i]);
+    }
+    printf("value from vertex map2: %f\n", vertexMap[0][0]);
+    printf("Sampling vertex map: %f\n", vertexMap[0][0]);
+    cv::Mat img(vertexMap.size(), vertexMap.at(0).size(), CV_8UC1);
+    
+    printf("2\n");
+    printf("Sampling vertex map: %f\n", vertexMap[0][0]);
+    for (int i = 1; i < 1+1; i++) {
+        for (int j = 0; j < img.cols; j++) {
+            //printf("Vertex value now please: %d %f\n", j, vertexMap[i][j]);
+        }
+    }
+    for (int i = 0; i < img.rows; i++){
+        for (int j = 0; j < img.cols; j++) {
+            //printf("vertexMap value: %f\n", vertexMap.at(i).at(j));
+            //img.at<uchar>(i, j) = vertexMap.at(i).at(j);
+            //printf("%f\n", vertexMap.at(2).at(2) * 20);
+            img.at<uchar>(i, j) = (vertexMap.at(i).at(j) * 30);
+        }
+    }
+        
+    //printf("%d, %d\n", img.size(), img.at(0).size());
+    /*
+    for (int i = 0; i < 64; i++) {
+        for (int j = 0; j < 900; j++) {
+            vertexMap_Mat.at<double>(i, j) = vertexMap.at(i).at(j);
+        }
+    }*/
 
+    
+
+    printf("3\n");
+    //cv::namedWindow("Array Image", cv::WINDOW_NORMAL);
+    //cv::namedWindow("Window Test");
+    printf("5\n");
+    cv::imshow("Array Image", img);
+    
+    // Create visualizer
+    pcl::visualization::PCLVisualizer::Ptr viewer(new pcl::visualization::PCLVisualizer("Visualization"));
+
+    // Set background color to be black
+    viewer->setBackgroundColor(0, 0, 0);
+
+    // Set point cloud color
+    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> color_handler(cloud, 212, 201, 87);
+    viewer->addPointCloud(cloud, color_handler, "cloud");
+
+    // Add x, y, z arrows to point cloud
+    addAxes(viewer, 3);
+    printf("Height: %d\n", cloud->height);
+    printf("Width: %d\n", cloud->width);
+
+    // Display point cloud
+    while (!viewer->wasStopped()) viewer->spinOnce();
+    cv::waitKey(0);  // wait for a key press
+    printf("6\n");
+    
+    printf("7\n");
     return 0;
 }

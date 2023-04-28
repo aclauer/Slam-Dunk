@@ -13,6 +13,8 @@ class Preprocessor {
         double getDistance(pcl::PointXYZ point);
         //double (*getVertexMap(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud))[900];
         std::vector< std::vector<float> > getVertexMap(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
+        int projectUCoord(pcl::PointXYZ point);
+        int projectVCoord(pcl::PointXYZ point);
 };
 
 #endif
