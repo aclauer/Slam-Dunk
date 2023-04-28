@@ -66,7 +66,7 @@ int main() {
         //printf("z: %f\n", cloud->points[nIndex].z);
         //printf("Range: %f\n", preprocessor.getSquareDistance(cloud->points[nIndex]));
     }
-    pcl::PointXYZ p = cloud->points[9294];
+    pcl::PointXYZ p = cloud->points[115322];
     double x = p.x;
     double y = p.y;
     double z = p.z;
@@ -107,19 +107,38 @@ int main() {
     //printf("%f\n", vertexMap[0][0]);
     printf("(%f, %f, %f)\n", x, y, z);
 
-    double z_1 = z / abs(x);
+    //double z_1 = z / abs(x);double r = preprocessor.getSquareDistance(p);
+    //double s = asin(z * 1/r);
     //printf("z_1: %f\n", z_1);
-    double z_2 = z_1 + (24.8 / 26.8);
-    double z_3 = z_2 * 64;
-    printf("z_1: %f, z_2: %f, z_3: %f\n", z_1, z_2, z_3);
+    //double z_2 = z_1 + (24.8 / 26.8);
+    //double z_3 = z_2 * 64;
+    //printf("z_1: %f, z_2: %f, z_3: %f\n", z_1, z_2, z_3);
 
-    //double r = preprocessor.getSquareDistance(p);
+    double r = preprocessor.getDistance(p);
     //double s = asin(z * 1/r);
 
     //double v = (1 - (asin(z * (1/r)) + 2)/26.8)*64;
     //printf("r: %f, s: %f, v: %f\n", r, s, v);
 
-    
+    double theta = asin(z / r);
+    double z_1 = tan(theta);
+
+    printf("r: %f, Theta: %f, z_1: %f\n", r, theta, z_1);
+
+    double min = 0;
+    double max = 0;
+    for (int i = 0; i < cloud->points.size(); i++) {
+        double z = cloud->points[i].z;
+        double r = preprocessor.getDistance(cloud->points[i]);
+        double theta = asin(z / r);
+        double z_1 = tan(theta);
+
+        min = (z_1 < min) ? z_1 : min;
+        max = (z_1 > max) ? z_1 : max;
+    }
+
+    printf("Min z_1: %f\n", min);
+    printf("Max z_1: %f\n", max);
 
     printf("Successfully finished!\n");
     return 0;
