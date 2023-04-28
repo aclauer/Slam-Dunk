@@ -6,6 +6,7 @@
 #include <pcl/point_cloud.h>
 #include <opencv4/opencv2/core.hpp>
 #include <opencv4/opencv2/highgui.hpp>
+#include <ctime>
 
 #include "Preprocessor.h"
 
@@ -36,7 +37,7 @@ void addAxes(pcl::visualization::PCLVisualizer::Ptr viewer, double scale) {
 
 int main() {
     // Load in the specified point cloud after it has been converted to pcd
-    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loadPCD("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/0000000019_converted.pcd");
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loadPCD("/home/andrewlauer/Documents/projects/Slam-Dunk/pointclouds/049.pcd");
     
     Preprocessor preprocessor;
 
@@ -51,29 +52,64 @@ int main() {
         //printf("Range: %f\n", preprocessor.getSquareDistance(cloud->points[nIndex]));
     }
 
+    std::clock_t startV = std::clock();
     std::vector<std::vector<float> > vertexMap = preprocessor.getVertexMap(cloud);
+    std::clock_t endV = std::clock();
+
+    double vmap_runtime = double(endV - startV) / CLOCKS_PER_SEC;
+    printf("Vertex Map runtime: %f\n", vmap_runtime);
 
     // Convert vertex map into Mat object
-    cv::Mat vertImg(vertexMap.size(), vertexMap.at(0).size(), CV_8UC1);
+    cv::Mat vertImg(vertexMap.size(), vertexMap.at(0).size(), CV_8UC3);
     for (int i = 0; i < vertImg.rows; i++){
         for (int j = 0; j < vertImg.cols; j++) {
-            vertImg.at<uchar>(i, j) = (vertexMap.at(i).at(j) * 30);
+            double c = vertexMap.at(i).at(j) * 30;
+            vertImg.at<cv::Vec3b>(i, j) = cv::Vec3b(c, c, c);
+            if (j == 450) {
+                vertImg.at<cv::Vec3b>(i, j) = cv::Vec3b(0, 0, 255);
+            }
+            if (j == 225) {
+                vertImg.at<cv::Vec3b>(i, j) = cv::Vec3b(0, 255, 0);
+            }
         }
     }
 
-    cv::imwrite("Vertex Map", vertImg);
+    cv::imshow("Vertex Map", vertImg);
     cv::waitKey(0);  // wait for a key press
+    
+    //cv::imwrite("/maps/000_vert.png", vertImg);
 
+    std::clock_t startN = std::clock();
     std::vector<std::vector<float> > normalMap = preprocessor.getNormalMap(vertexMap);
+    std::clock_t endN = std::clock();
 
+    double nmap_runtime = double(endN - startN) / CLOCKS_PER_SEC;
+    printf("Normal Map runtime: %f\n", nmap_runtime);
+
+    /*
     cv::Mat normImg(normalMap.size(), normalMap.at(0).size(), CV_8UC1);
     for (int i = 0; i < normImg.rows; i++) {
         for (int j = 0; j < normImg.cols; j++) {
             normImg.at<uchar>(i, j) = (normalMap.at(i).at(j));
         }
     }
+    */
 
-    cv::imwrite("Normal Map", normImg);
+    cv::Mat normImg(normalMap.size(), normalMap.at(0).size(), CV_8UC3);
+    for (int i = 0; i < normImg.rows; i++) {
+        for (int j = 0; j < normImg.cols; j++) {
+            double c = (normalMap.at(i).at(j));
+            normImg.at<cv::Vec3b>(i, j) = cv::Vec3b(c, c, c);
+            if (j == 450) {
+                normImg.at<cv::Vec3b>(i, j) = cv::Vec3b(0, 0, 255);
+            }
+            if (j == 225) {
+                normImg.at<cv::Vec3b>(i, j) = cv::Vec3b(0, 255, 0);
+            }
+        }
+    }
+
+    cv::imshow("Normal Map", normImg);
     cv::waitKey(0);
     
     
